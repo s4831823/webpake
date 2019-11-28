@@ -14,8 +14,8 @@ module.exports = {
     //兩個進入口
     entry: {
         index: ['./src/index.js','./src/index.jsx'],
-        aboutus: './src/aboutus.js',
-        text: ['./src/text.js','./src/text.jsx'],
+        // aboutus: './src/aboutus.js',
+        // text: ['./src/text.js','./src/text.jsx'],
    
     },
     // 打開瀏覽器 server 
@@ -86,7 +86,7 @@ module.exports = {
     //使用哪些套件
     plugins: [
         //清理舊的檔案
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
     
         //html 5 plugin
         new HtmlWebpackPlugin({
@@ -96,20 +96,20 @@ module.exports = {
             filename: 'index.html', //產生的首頁 index.html
             template: './src/index.html' //我們參考的首頁
         }),
-        new HtmlWebpackPlugin({
-            title: '關於我們',
-            inject: 'body',
-            chunks: ['aboutus'], // 選擇資源載入
-            filename: 'aboutus.html', //產生的首頁 index.html
-            template: './src/aboutus.html' //我們參考的首頁
-        }),
-        new HtmlWebpackPlugin({
-            title: '測試',
-            inject: 'body',
-            chunks: ['text'],// 選擇資源載入
-            filename: 'text.html', //產生的首頁 index.html
-            template: './src/text.html' //我們參考的首頁
-        }),
+        // new HtmlWebpackPlugin({
+        //     title: '關於我們',
+        //     inject: 'body',
+        //     chunks: ['aboutus'], // 選擇資源載入
+        //     filename: 'aboutus.html', //產生的首頁 index.html
+        //     template: './src/aboutus.html' //我們參考的首頁
+        // }),
+        // new HtmlWebpackPlugin({
+        //     title: '測試',
+        //     inject: 'body',
+        //     chunks: ['text'],// 選擇資源載入
+        //     filename: 'text.html', //產生的首頁 index.html
+        //     template: './src/text.html' //我們參考的首頁
+        // }),
        
         //這個套件是載入 css 檔案
         new MiniCssExtractPlugin({

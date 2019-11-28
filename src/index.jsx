@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 class Aext extends React.Component{
     render(){
         return <h1 style={this.props.style}>Hello,{this.props.name}!</h1>
-        
     }
 }
 
@@ -12,8 +11,8 @@ let title = (
     <div>
         <Aext name="abc"/>
         <Aext name="jjjjj"/>
-        {/* <Aext name="jafdafo" style={{'font-size':44, 'color':'#f00'}}/>
-        <Aext name="jafjfdiohoisdj" style={{'font-size':24}}/> */}
+        <Aext name="jafdafo" style={{'font-size':44, 'color':'#f00'}}/>
+        <Aext name="jafjfdiohoisdj" style={{'font-size':24}}/> 
     </div>
 )
 ReactDOM.render(title,document.getElementById('root'))
@@ -127,9 +126,7 @@ const CardFooter = (props) =>{
     return(
     <div className="card-footer"
     style={{backgroundColor:criteria.backgroundColor}}
-    >
-       {criteria.title}
-        </div>
+    >{criteria.title}</div>
     );
 }
     
@@ -190,3 +187,142 @@ const SpeedConverter = () => {
   };
   
   ReactDOM.render(<SpeedConverter />, document.getElementById('root3'));
+
+  class App extends React.Component{
+    render(){
+      return(
+        <div>
+        <h1>Header</h1>
+        <h2>Content</h2>
+         <div>{ 1 + 1 }</div>
+         <div datadata = "3.1415926...">這樣寫法沒有錯</div>
+        </div>
+       
+      );
+    }
+  }
+  ReactDOM.render(<App />,document.getElementById('app'));
+
+  class App2 extends React.Component{
+    render() {
+      var i = 1;
+      var myStyle = {
+        fontSize: 100, // 駝峰式語法
+        color: '#FF0000'
+        
+     }
+      return (
+          <div>
+              <h1 style={myStyle}>{i == 1 ? 'True!' : 'False'}</h1>
+              ｛ /* 註解 */ ｝
+          </div>
+      );
+    }
+  }
+  ReactDOM.render(<App2 />,document.getElementById('app2'));
+
+  class App3 extends React.Component {
+    constructor(){
+        super();
+        this.state={
+            "name":"RayRay"
+        }
+    }
+   render() {
+      return (
+         <div>
+            <Header/>
+            <Content/>
+            <p>by {this.state.name}</p>
+         </div>
+      );
+   }
+}
+class Header extends React.Component {
+  render() {
+     return (
+       <div>
+           <h1>Header</h1>
+       </div>
+     );
+  }
+}
+class Content extends React.Component {
+  render() {
+     return (
+        <div>
+           <h2>Content</h2>
+           <p>The content text!!!</p>
+        </div>
+     );
+  }
+}
+ReactDOM.render(<App3 />,document.getElementById('app3'));
+
+class TableRow extends React.Component {
+  render() {
+     return (
+        <tr>
+           <td>{this.props.data.name}</td>
+           <td>{this.props.data.age}</td>
+        </tr>
+     );
+  }
+}
+class App4 extends React.Component {
+  constructor() {
+     super();
+     this.state = {
+        data: 
+        [
+           {
+              "name":"dogA",
+              "age":"1"
+           },
+           {
+              "name":"catB",
+              "age":"2"
+           },
+           {
+              "name":"pigC",
+              "age":"3"
+           }
+        ],
+        id:"Animal List"
+     }
+  }
+  render() {
+     return (
+        <div>
+           <Header2 title = {this.state.id} />
+           <table>
+              <tbody>
+                 {this.state.data.map((animals, i) => 
+                 <TableRow key = {i} data = {animals} />)}
+              </tbody>
+           </table>
+        </div>
+     );
+  }
+}
+class Header2 extends React.Component {
+  render() {
+     return (
+       <div>
+           <h1>{this.props.title}</h1>
+       </div>
+     );
+  }
+}
+ReactDOM.render(<App4 />,document.getElementById('app4'));
+class App5 extends React.Component {
+  render() {
+     return (
+        <div>
+           {this.props.score}
+        </div>
+     );
+  }
+}
+export default App5;
+ReactDOM.render(<App5 score='1000' />,document.getElementById('app5'));

@@ -1,17 +1,18 @@
 body {
-   margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #f26072;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap:wrap;
+  //  margin: 0;
+  // padding: 0;
+  // height: 100%;
+  // width: 100%;
+  // background-color: #f26072;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-wrap:wrap;
   .test{
      display: flex;
      align-items: center;
      justify-content: center;
+     background-color: #f26072;
      flex-wrap:wrap;
   }
   .hidden{
